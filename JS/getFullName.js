@@ -20,3 +20,16 @@
 // getFullName('Bob', 'Tran') --> 'Bob Tran'
 
 // getFullName('john', 'pHAm') --> 'John Pham'
+
+function capitalize(str) {
+  const trimStr = (str || '').trim();
+  return trimStr.charAt(0).toUpperCase() + trimStr.slice(1).toLowerCase();
+}
+function getFullName(firstName, lastName) {
+  return `${capitalize(firstName)} ${capitalize(lastName)}`.trim();
+}
+console.log(getFullName('Alice'));
+console.log(getFullName('Alice', ''));
+console.log(getFullName('', 'Nguyen'));
+console.log(getFullName('Bob', 'Tran'));
+console.log(getFullName('john', 'pHAm'));
