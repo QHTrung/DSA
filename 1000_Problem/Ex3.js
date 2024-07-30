@@ -60,10 +60,3 @@ const countNumOfOddDigits = (n) => {
   return count;
 };
 console.log(countNumOfOddDigits(n));
-
-calcDivisor,
-  calcProduct,
-  findMaxOddDivisor,
-  countNumberOfDigits,
-  calcPOfDigits,
-  countNumOfOddDigits;
