@@ -1,5 +1,5 @@
 // Tính tổng tất cả các “ước số” của số nguyên dương n
-let n = 12345;
+let n = 12834;
 const calcDivisor = (n) => {
   let sum = 0;
   for (let index = 1; index <= n; index++) {
@@ -59,4 +59,23 @@ const countNumOfOddDigits = (n) => {
   }
   return count;
 };
-console.log(countNumOfOddDigits(n));
+// Tìm chữ số đầu tiên của số nguyên dương n
+const findFisrtDigitOfN = (n) => {
+  while (n >= 10) {
+    n /= 10;
+  }
+  return Math.floor(n);
+};
+// Tìm chữ số lớn nhất của số nguyên dương n
+const findMaxDigitOfN = (n) => {
+  let max = 0;
+  while (n !== 0) {
+    let i = Math.floor(n % 10);
+    if (i > max) {
+      max = i;
+    }
+    n = Math.trunc(n / 10);
+  }
+  return max;
+};
+console.log(findMaxDigitOfN(n));
