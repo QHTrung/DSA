@@ -1,5 +1,5 @@
 // Tính tổng tất cả các “ước số” của số nguyên dương n
-let n = 12834;
+let n = 593;
 const calcDivisor = (n) => {
   let sum = 0;
   for (let index = 1; index <= n; index++) {
@@ -78,4 +78,24 @@ const findMaxDigitOfN = (n) => {
   }
   return max;
 };
-console.log(findMaxDigitOfN(n));
+// Kiểm tra các chữ số của số n có tăng dần từ trái sang phải không
+const checkAscendingDigits = (n) => {
+  // 357 -> true
+  // 574 - false
+  let check = true;
+  let tempN = n;
+  let lastDigit = Math.trunc(n % 10);
+  tempN = Math.trunc(tempN / 10);
+  while (tempN !== 0) {
+    let nextDigit = Math.trunc(tempN % 10);
+    tempN = Math.trunc(tempN / 10);
+    if (nextDigit > lastDigit) {
+      check = false;
+      break;
+    } else {
+      lastDigit = nextDigit;
+    }
+  }
+  return check;
+};
+console.log(checkAscendingDigits(n));
